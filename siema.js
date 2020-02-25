@@ -18,7 +18,14 @@ document.addEventListener('DOMContentLoaded', function () { // zabezpieczenie js
         const direction = e.wheelDelta < 0 ? 1 : -1; // określamy kierunek
         // console.log(`Wheel delta wynosi: ${e.wheelDelta}`);
 
+        scroll(direction);
 
+    });
+
+
+    // WYDZIELAMY FUNKCJE
+
+    function scroll(direction) {
         if (direction === 1) {
             const isLastSection = currenSectionIndex === sections.length - 1; // jezeli current jest takie same jak section.lengt to...
             if (isLastSection) return; // jezeli jest last section to wyjdz
@@ -33,11 +40,15 @@ document.addEventListener('DOMContentLoaded', function () { // zabezpieczenie js
         console.log(`current sec index wynosi: ${currenSectionIndex}`);
         console.log(`direction wynosi: ${direction}`);
 
+        scrollCurrentSection();
+    }
+
+
+    function scrollCurrentSection() {
         sections[currenSectionIndex].scrollIntoView({
             behavior: 'smooth',
             block: 'start',
         })
-
-    })
+    }
 })
 
