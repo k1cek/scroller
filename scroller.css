@@ -1,0 +1,28 @@
+.scroller__navigation {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.scroller__navigation ul {
+    list-style: none;
+}
+
+.scroller__navigation ul li {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: rgba(24, 159, 250, 0.685);
+    cursor: pointer;
+}
+
+.scroller__navigation ul li.active {
+    background-color: red;
+}
+
+/* tylko bracia pierwszego li  */
+
+.scroller__navigation ul li + li { 
+    margin-top: 20px;
+}
